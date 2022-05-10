@@ -7,3 +7,25 @@ Scrivi una funzione che prenda in input una marca e stampi i modelli presenti ne
 Consigli:
   Puoi usare un array come base per salvare le automobili. 
 */
+
+let garage = {
+  cars : [
+    {brand : 'Peugeot', model : '208'},
+    {brand : 'Peugeot', model : '308'},
+    {brand : 'Peugeot', model : '2008'},
+    {brand : 'Alfa Romeo', model : 'Giulietta'},
+    {brand : 'Fiat', model : 'Panda'},
+    {brand : 'Fiat', model : 'Punto'},
+    {brand : 'Chevrolet', model : 'Camaro'},
+    {brand : 'Opel', model : 'Zafira'},
+    {brand : 'Opel', model : 'Corsa'}
+  ],
+
+  printModels : function(brandToSearch){
+    let models = this.cars.filter((actualBrand)=> actualBrand.brand == brandToSearch)
+
+    models.forEach((modelToPrint)=> console.log(modelToPrint.model))
+  }
+}
+
+garage.printModels('Opel')
