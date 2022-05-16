@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        /*
+        Scrivere una funzione che accetta come parametri un array di numeri e un numero di soglia e restituisce un array formato dai numeri maggiori della soglia fornita. Ad esempio: ([1,2,3,4],3) ==> [4]
+        */
+
+        function sogliaArray(array, soglia){
+
+            return array.filter((el)=> el>soglia)
+        }
+
+        console.log(sogliaArray([1,2,3,4,23,11],7));
+        
+    </script>
+</body>
+</html>

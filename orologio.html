@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Scrivere una funzione che prende in ingresso un numero e lo trasforma in ore e minuti.
+        Ad esempio 3014 ==> 50:14; devono essere sempre presenti due cifre, sia per le ore che per i minuti, quindi non dovrò ottenere ad esempio 3:9 ma 03:09.
+        */
+
+        function orologio(num){
+            let hours = Math.floor(num/60)
+            let minutes = num-(hours*60)
+            
+            if(hours<10)
+                hours='0'+hours
+            if(minutes<10)
+                minutes='0'+minutes
+
+            return (`${hours}:${minutes}`)
+        }
+
+        console.log(orologio(5));
+
+    </script>
+</body>
+</html>

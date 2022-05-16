@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        Scrivere una funzione che restituisce un array di N numeri interi random compresi tra un minimo e un massimo.
+        */
+
+        function randomArray(N, min, max){
+            
+            let arr=[]
+            let newN
+            let double
+
+            while (N>0){
+
+                do{
+                    double=false
+                    newN = Math.floor(Math.random()*(max-min+1)+min)
+                    arr.forEach(el=>{
+                        if(el==newN)
+                            double=true
+                    })
+                }while(double==true)
+
+                arr.push(newN)
+                N--
+            }
+
+            return arr
+        }
+
+        console.log(randomArray(7, 5, 20));
+
+    </script>
+</body>
+</html>
