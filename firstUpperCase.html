@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        /*
+        Scrivere una funzione che, data una stringa, trasformi la prima lettera di ogni parola in maiuscolo.
+         */
+
+        function firstUpperCase(str){
+
+            /* metodo lungo:
+            
+            let arr = str.split(' ')
+            let arr2 = []
+
+            arr.forEach(element => {
+                let first = element.charAt(0).toUpperCase()
+                let spliced = element.split('').splice(1).join('')
+                arr2.push(first + spliced)
+            });
+
+            return arr2.join(' ')
+            */
+
+            //metodo veloce:
+            return str.split(' ').map(el => el[0].toUpperCase()+ el.substr(1)).join(' ')
+        }
+
+        console.log(firstUpperCase('che bella questa frase ingrandita'))
+
+    </script>
+</body>
+</html>

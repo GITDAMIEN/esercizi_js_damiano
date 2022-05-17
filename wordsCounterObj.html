@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        /*
+        15. Scrivere una funzione che, assegnata una stringa, ritorni un oggetto con chiavi le parole (distinte) e valori la loro frequenza. Ad esempio: "Quella cosa affianco alla cosa sulla cosa" => {Quella : 1, cosa : 3, affianco : 1, alla : 1, sulla : 1}
+        */
+
+        function wordsCounterObj (str){
+
+            let arr = str.split(' ');  //separo le parole
+            let unici = Array.from(new Set(arr))  //creo un set con le parole uniche, quindi lo rendo un array
+
+            // mappo su unici e per ogni elemento creo un elemento di un array che è a sua volta un array con l'elemento come chiave e la lunghezza (quindi il numero di volte che compare) come valore
+            let arrDiArr = unici.map(el => [el, arr.filter(e => e==el).length])
+            
+            //return dell'oggetto ricavato dall'array di array
+            return Object.fromEntries(arrDiArr)
+
+            //versione illeggibile in una riga
+            //return Object.fromEntries(Array.from(new Set(str.split(' '))).map(el => [el, str.split(' ').filter(e => e==el).length]))
+        }
+
+
+        console.log(wordsCounterObj('Quella cosa affianco alla cosa sulla cosa'))
+
+
+    </script>
+</body>
+</html>
